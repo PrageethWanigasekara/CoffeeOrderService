@@ -3058,3 +3058,351 @@ Caused by: java.io.FileNotFoundException: class path resource [db/changelog/chan
 2020-10-13 15:43:19.096  INFO 10524 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
 2020-10-13 15:43:19.652  INFO 10524 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
 2020-10-13 15:43:19.667  INFO 10524 --- [main] com.prageeth.OrderServiceApplication     : Started OrderServiceApplication in 14.249 seconds (JVM running for 15.059)
+2020-10-13 16:07:20.230  INFO 10732 --- [main] com.prageeth.OrderServiceApplication     : Starting OrderServiceApplication on LAPTOP-KEDLI0GA with PID 10732 (D:\MyWork\new\CoffeeOrderService\target\classes started by Prageeth in D:\MyWork\new\CoffeeOrderService)
+2020-10-13 16:07:20.230  INFO 10732 --- [main] com.prageeth.OrderServiceApplication     : No active profile set, falling back to default profiles: default
+2020-10-13 16:07:21.911  INFO 10732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-13 16:07:22.001  INFO 10732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84ms. Found 3 JPA repository interfaces.
+2020-10-13 16:07:22.804  INFO 10732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-13 16:07:22.819  INFO 10732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-13 16:07:22.819  INFO 10732 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-13 16:07:22.952  INFO 10732 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-13 16:07:22.952  INFO 10732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2590 ms
+2020-10-13 16:07:23.258  INFO 10732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-13 16:07:23.537  INFO 10732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-13 16:07:24.989  INFO 10732 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 16:07:24.989  INFO 10732 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 16:07:24.989  INFO 10732 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2020-10-13 16:07:25.005  INFO 10732 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2020-10-13 16:07:27.931  INFO 10732 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2020-10-13 16:07:27.931  INFO 10732 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2020-10-13 16:07:27.931  INFO 10732 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2020-10-13 16:07:27.931  INFO 10732 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2020-10-13 16:07:27.946  INFO 10732 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2020-10-13 16:07:28.015  INFO 10732 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-13 16:07:28.062  INFO 10732 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-13 16:07:28.131  INFO 10732 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-13 16:07:28.310  INFO 10732 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-13 16:07:28.395  WARN 10732 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-13 16:07:28.464  INFO 10732 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-10-13 16:07:28.617  INFO 10732 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-10-13 16:07:28.750  INFO 10732 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-10-13 16:07:29.745  INFO 10732 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-13 16:07:29.763  INFO 10732 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-13 16:07:29.867  INFO 10732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-13 16:07:29.867  INFO 10732 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-10-13 16:07:29.897  INFO 10732 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-10-13 16:07:29.937  INFO 10732 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-10-13 16:07:30.130  INFO 10732 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-13 16:07:30.524  INFO 10732 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-13 16:07:30.543  INFO 10732 --- [main] com.prageeth.OrderServiceApplication     : Started OrderServiceApplication in 11.059 seconds (JVM running for 12.054)
+2020-10-13 16:40:32.556  INFO 13988 --- [main] com.prageeth.OrderServiceApplication     : Starting OrderServiceApplication on LAPTOP-KEDLI0GA with PID 13988 (D:\MyWork\new\CoffeeOrderService\target\classes started by Prageeth in D:\MyWork\new\CoffeeOrderService)
+2020-10-13 16:40:32.572  INFO 13988 --- [main] com.prageeth.OrderServiceApplication     : No active profile set, falling back to default profiles: default
+2020-10-13 16:40:33.860  INFO 13988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-13 16:40:33.960  INFO 13988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78ms. Found 3 JPA repository interfaces.
+2020-10-13 16:40:34.762  INFO 13988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-13 16:40:34.777  INFO 13988 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-13 16:40:34.777  INFO 13988 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-13 16:40:34.909  INFO 13988 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-13 16:40:34.909  INFO 13988 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2284 ms
+2020-10-13 16:40:35.194  INFO 13988 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-13 16:40:35.433  INFO 13988 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-13 16:40:36.869  INFO 13988 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 16:40:36.869  INFO 13988 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 16:40:36.884  INFO 13988 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2020-10-13 16:40:36.900  INFO 13988 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2020-10-13 16:40:40.401  INFO 13988 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2020-10-13 16:40:40.401  INFO 13988 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2020-10-13 16:40:40.401  INFO 13988 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2020-10-13 16:40:40.401  INFO 13988 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2020-10-13 16:40:40.416  INFO 13988 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2020-10-13 16:40:40.485  INFO 13988 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-13 16:40:40.532  INFO 13988 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-13 16:40:40.601  INFO 13988 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-13 16:40:40.786  INFO 13988 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-13 16:40:40.848  WARN 13988 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-13 16:40:40.949  INFO 13988 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-10-13 16:40:41.087  INFO 13988 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-10-13 16:40:41.180  INFO 13988 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-10-13 16:40:41.990  INFO 13988 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-13 16:40:42.006  INFO 13988 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-13 16:40:42.106  INFO 13988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-13 16:40:42.106  INFO 13988 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-10-13 16:40:42.128  INFO 13988 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-10-13 16:40:42.175  INFO 13988 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-10-13 16:40:42.328  INFO 13988 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-13 16:40:42.692  INFO 13988 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-13 16:40:42.714  INFO 13988 --- [main] com.prageeth.OrderServiceApplication     : Started OrderServiceApplication in 10.731 seconds (JVM running for 11.465)
+2020-10-13 16:42:30.238  INFO 13988 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-13 16:42:30.238  INFO 13988 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-13 16:42:30.246  INFO 13988 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-10-13 16:42:30.398  INFO 13988 --- [http-nio-8080-exec-1] c.p.service.impl.CoffeeOrderServiceImpl  : Starting calculating position
+2020-10-13 16:42:30.556  INFO 13988 --- [http-nio-8080-exec-1] c.p.service.impl.CoffeeOrderServiceImpl  : Position map: {1=2, 2=1}
+2020-10-13 16:42:30.556  INFO 13988 --- [http-nio-8080-exec-1] c.p.service.impl.CoffeeOrderServiceImpl  : No empty queue found, Finding queue
+2020-10-13 16:42:30.653  INFO 13988 --- [http-nio-8080-exec-1] c.p.service.impl.CoffeeOrderServiceImpl  : Order successfully created - orderId: 4
+2020-10-13 16:43:00.548  INFO 13988 --- [http-nio-8080-exec-3] c.p.service.impl.CoffeeOrderServiceImpl  : Starting calculating position
+2020-10-13 16:43:00.551 ERROR 13988 --- [http-nio-8080-exec-3] c.p.service.impl.CoffeeOrderServiceImpl  : No master queue data exist
+2020-10-13 16:43:00.554 ERROR 13988 --- [http-nio-8080-exec-3] c.p.exception.GlobalExceptionHandler     : Error : Resource not found - shopId : 2
+2020-10-13 16:43:06.966  INFO 13988 --- [http-nio-8080-exec-5] c.p.service.impl.CoffeeOrderServiceImpl  : Starting calculating position
+2020-10-13 16:43:06.971  INFO 13988 --- [http-nio-8080-exec-5] c.p.service.impl.CoffeeOrderServiceImpl  : Position map: {1=2, 2=2}
+2020-10-13 16:43:06.971  INFO 13988 --- [http-nio-8080-exec-5] c.p.service.impl.CoffeeOrderServiceImpl  : No empty queue found, Finding queue
+2020-10-13 16:43:06.983  INFO 13988 --- [http-nio-8080-exec-5] c.p.service.impl.CoffeeOrderServiceImpl  : Order successfully created - orderId: 5
+2020-10-13 16:59:59.645  INFO 15352 --- [main] com.prageeth.OrderServiceApplication     : Starting OrderServiceApplication on LAPTOP-KEDLI0GA with PID 15352 (D:\MyWork\new\CoffeeOrderService\target\classes started by Prageeth in D:\MyWork\new\CoffeeOrderService)
+2020-10-13 16:59:59.645  INFO 15352 --- [main] com.prageeth.OrderServiceApplication     : No active profile set, falling back to default profiles: default
+2020-10-13 17:00:01.001  INFO 15352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-13 17:00:01.092  INFO 15352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79ms. Found 3 JPA repository interfaces.
+2020-10-13 17:00:01.909  INFO 15352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-13 17:00:01.909  INFO 15352 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-13 17:00:01.909  INFO 15352 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-13 17:00:02.056  INFO 15352 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-13 17:00:02.056  INFO 15352 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2349 ms
+2020-10-13 17:00:02.326  INFO 15352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-13 17:00:02.573  INFO 15352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-13 17:00:03.961  INFO 15352 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 17:00:03.961  INFO 15352 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 17:00:03.961  INFO 15352 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2020-10-13 17:00:03.977  INFO 15352 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2020-10-13 17:00:06.904  INFO 15352 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2020-10-13 17:00:06.904  INFO 15352 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2020-10-13 17:00:06.904  INFO 15352 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2020-10-13 17:00:06.904  INFO 15352 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2020-10-13 17:00:06.941  INFO 15352 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2020-10-13 17:00:07.003  INFO 15352 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-13 17:00:07.057  INFO 15352 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-13 17:00:07.125  INFO 15352 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-13 17:00:07.326  INFO 15352 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-13 17:00:07.357  WARN 15352 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-13 17:00:07.504  INFO 15352 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-10-13 17:00:07.590  INFO 15352 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-10-13 17:00:07.673  INFO 15352 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-10-13 17:00:08.603  INFO 15352 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-13 17:00:08.603  INFO 15352 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-13 17:00:08.703  INFO 15352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-13 17:00:08.703  INFO 15352 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-10-13 17:00:08.718  INFO 15352 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-10-13 17:00:08.756  INFO 15352 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-10-13 17:00:08.935  INFO 15352 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-13 17:00:09.320  INFO 15352 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-13 17:00:09.320  INFO 15352 --- [main] com.prageeth.OrderServiceApplication     : Started OrderServiceApplication in 10.232 seconds (JVM running for 11.02)
+2020-10-13 17:04:11.617  INFO 14112 --- [main] com.prageeth.OrderServiceApplication     : Starting OrderServiceApplication on LAPTOP-KEDLI0GA with PID 14112 (D:\MyWork\new\CoffeeOrderService\target\classes started by Prageeth in D:\MyWork\new\CoffeeOrderService)
+2020-10-13 17:04:11.632  INFO 14112 --- [main] com.prageeth.OrderServiceApplication     : No active profile set, falling back to default profiles: default
+2020-10-13 17:04:12.967  INFO 14112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-13 17:04:13.051  INFO 14112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72ms. Found 3 JPA repository interfaces.
+2020-10-13 17:04:13.869  INFO 14112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-13 17:04:13.885  INFO 14112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-13 17:04:13.885  INFO 14112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-13 17:04:14.038  INFO 14112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-13 17:04:14.038  INFO 14112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2343 ms
+2020-10-13 17:04:14.286  INFO 14112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-13 17:04:14.624  INFO 14112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-13 17:04:15.926  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 17:04:15.941  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangeloglock (ID INTEGER NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP WITHOUT TIME ZONE, LOCKEDBY VARCHAR(255), CONSTRAINT DATABASECHANGELOGLOCK_PKEY PRIMARY KEY (ID))
+2020-10-13 17:04:15.963  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 17:04:15.963  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM public.databasechangeloglock
+2020-10-13 17:04:15.963  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangeloglock (ID, LOCKED) VALUES (1, FALSE)
+2020-10-13 17:04:15.979  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2020-10-13 17:04:15.979  INFO 14112 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2020-10-13 17:04:18.686  INFO 14112 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: public.databasechangelog
+2020-10-13 17:04:18.686  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.databasechangelog (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP WITHOUT TIME ZONE NOT NULL, ORDEREXECUTED INTEGER NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2020-10-13 17:04:18.693  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2020-10-13 17:04:18.693  INFO 14112 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2020-10-13 17:04:18.693  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2020-10-13 17:04:18.693  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 17:04:18.755  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.coffee_order (order_id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, created_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(), last_modified_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(), is_inactive INTEGER NOT NULL, shop_id INTEGER, shop_name VARCHAR(255), user_id INTEGER, queue_detail_id INTEGER, CONSTRAINT coffee_order_pkey PRIMARY KEY (order_id))
+2020-10-13 17:04:18.771  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : Table coffee_order created
+2020-10-13 17:04:18.771  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/changelog.xml::1602570266922-1::Prageeth (generated) ran successfully in 16ms
+2020-10-13 17:04:18.771  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2020-10-13 17:04:18.786  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602570266922-1', 'Prageeth (generated)', 'classpath:/db/changelog/changelog.xml', NOW(), 1, '8:87d165da0f56a9fb6f764217c574ee1a', 'createTable tableName=coffee_order', '', 'EXECUTED', NULL, NULL, '3.8.9', '2588858693')
+2020-10-13 17:04:18.786  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.customer_queue_detail (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, created_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(), last_modified_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(), is_deleted INTEGER NOT NULL, position INTEGER, queue_id INTEGER, shop_id INTEGER, waiting_minutes FLOAT8, CONSTRAINT customer_queue_detail_pkey PRIMARY KEY (id))
+2020-10-13 17:04:18.793  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : Table customer_queue_detail created
+2020-10-13 17:04:18.793  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/changelog.xml::1602570266922-2::Prageeth (generated) ran successfully in 7ms
+2020-10-13 17:04:18.793  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602570266922-2', 'Prageeth (generated)', 'classpath:/db/changelog/changelog.xml', NOW(), 2, '8:2fba8901baebc2201dc988d343b2c3f5', 'createTable tableName=customer_queue_detail', '', 'EXECUTED', NULL, NULL, '3.8.9', '2588858693')
+2020-10-13 17:04:18.793  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.ordered_menu_item (menu_id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, created_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(), last_modified_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(), is_deleted INTEGER NOT NULL, item_name VARCHAR(255), num_of_items INTEGER, order_id INTEGER, CONSTRAINT ordered_menu_item_pkey PRIMARY KEY (menu_id))
+2020-10-13 17:04:18.793  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : Table ordered_menu_item created
+2020-10-13 17:04:18.793  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/changelog.xml::1602570266922-3::Prageeth (generated) ran successfully in 0ms
+2020-10-13 17:04:18.793  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602570266922-3', 'Prageeth (generated)', 'classpath:/db/changelog/changelog.xml', NOW(), 3, '8:4219b1b92d4f7f9f746984ecb83a0c84', 'createTable tableName=ordered_menu_item', '', 'EXECUTED', NULL, NULL, '3.8.9', '2588858693')
+2020-10-13 17:04:18.809  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE public.master_queue_data (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, num_of_queues INTEGER, shop_id INTEGER, CONSTRAINT master_queue_data_pkey PRIMARY KEY (id))
+2020-10-13 17:04:18.809  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : Table master_queue_data created
+2020-10-13 17:04:18.809  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/changelog.xml::1602570266922-4::Prageeth (generated) ran successfully in 0ms
+2020-10-13 17:04:18.809  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602570266922-4', 'Prageeth (generated)', 'classpath:/db/changelog/changelog.xml', NOW(), 4, '8:bb5966459c56a47d34b057452c6de153', 'createTable tableName=master_queue_data', '', 'EXECUTED', NULL, NULL, '3.8.9', '2588858693')
+2020-10-13 17:04:18.809  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE public.ordered_menu_item ADD CONSTRAINT fkokjo7gdkt1gg66tmyycvmlv29 FOREIGN KEY (order_id) REFERENCES public.coffee_order (order_id) ON UPDATE NO ACTION ON DELETE NO ACTION
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : Foreign key constraint added to ordered_menu_item (order_id)
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/changelog.xml::1602570266922-5::Prageeth (generated) ran successfully in 15ms
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602570266922-5', 'Prageeth (generated)', 'classpath:/db/changelog/changelog.xml', NOW(), 5, '8:a3362271d39331559eeddb60c38d894b', 'addForeignKeyConstraint baseTableName=ordered_menu_item, constraintName=fkokjo7gdkt1gg66tmyycvmlv29, referencedTableName=coffee_order', '', 'EXECUTED', NULL, NULL, '3.8.9', '2588858693')
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE public.coffee_order ADD CONSTRAINT fk3q81t12poq2k7e0avvvgyk10l FOREIGN KEY (queue_detail_id) REFERENCES public.customer_queue_detail (id) ON UPDATE NO ACTION ON DELETE NO ACTION
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : Foreign key constraint added to coffee_order (queue_detail_id)
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/changelog.xml::1602570266922-6::Prageeth (generated) ran successfully in 0ms
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602570266922-6', 'Prageeth (generated)', 'classpath:/db/changelog/changelog.xml', NOW(), 6, '8:fe7e0f3a6ef08040eef7719c78d28461', 'addForeignKeyConstraint baseTableName=coffee_order, constraintName=fk3q81t12poq2k7e0avvvgyk10l, referencedTableName=customer_queue_detail', '', 'EXECUTED', NULL, NULL, '3.8.9', '2588858693')
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE SEQUENCE  IF NOT EXISTS public.hibernate_sequence AS bigint START WITH 1 INCREMENT BY 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : Sequence hibernate_sequence created
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/changelog.xml::1602570266922-7::Prageeth (generated) ran successfully in 0ms
+2020-10-13 17:04:18.824  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602570266922-7', 'Prageeth (generated)', 'classpath:/db/changelog/changelog.xml', NOW(), 7, '8:9ceb883b9596bb0ffbea0d025c1339ff', 'createSequence sequenceName=hibernate_sequence', '', 'EXECUTED', NULL, NULL, '3.8.9', '2588858693')
+2020-10-13 17:04:18.840  INFO 14112 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (1, '2020-10-13 12:33:58.693908', '2020-10-13 12:33:58.694408', 0, 1, 'bdc', 33, 1)
+2020-10-13 17:04:18.840 ERROR 14112 --- [main] liquibase.changelog.ChangeSet            : Change Set classpath:/db/changelog/dif.xml::1602588291756-1::Prageeth (generated) failed.  Error: ERROR: insert or update on table "coffee_order" violates foreign key constraint "fk3q81t12poq2k7e0avvvgyk10l"
+  Detail: Key (queue_detail_id)=(1) is not present in table "customer_queue_detail". [Failed SQL: (0) INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (1, '2020-10-13 12:33:58.693908', '2020-10-13 12:33:58.694408', 0, 1, 'bdc', 33, 1)]
+2020-10-13 17:04:18.840  INFO 14112 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2020-10-13 17:04:18.840  WARN 14112 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:/db/changelog/dif.xml::1602588291756-1::Prageeth (generated):
+     Reason: liquibase.exception.DatabaseException: ERROR: insert or update on table "coffee_order" violates foreign key constraint "fk3q81t12poq2k7e0avvvgyk10l"
+  Detail: Key (queue_detail_id)=(1) is not present in table "customer_queue_detail". [Failed SQL: (0) INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (1, '2020-10-13 12:33:58.693908', '2020-10-13 12:33:58.694408', 0, 1, 'bdc', 33, 1)]
+2020-10-13 17:04:18.840  INFO 14112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-13 17:04:18.840  INFO 14112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-13 17:04:18.855  INFO 14112 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-10-13 17:04:18.871  INFO 14112 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-13 17:04:18.871 ERROR 14112 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:/db/changelog/dif.xml::1602588291756-1::Prageeth (generated):
+     Reason: liquibase.exception.DatabaseException: ERROR: insert or update on table "coffee_order" violates foreign key constraint "fk3q81t12poq2k7e0avvvgyk10l"
+  Detail: Key (queue_detail_id)=(1) is not present in table "customer_queue_detail". [Failed SQL: (0) INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (1, '2020-10-13 12:33:58.693908', '2020-10-13 12:33:58.694408', 0, 1, 'bdc', 33, 1)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:311)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.prageeth.OrderServiceApplication.main(OrderServiceApplication.java:18)
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:/db/changelog/dif.xml::1602588291756-1::Prageeth (generated):
+     Reason: liquibase.exception.DatabaseException: ERROR: insert or update on table "coffee_order" violates foreign key constraint "fk3q81t12poq2k7e0avvvgyk10l"
+  Detail: Key (queue_detail_id)=(1) is not present in table "customer_queue_detail". [Failed SQL: (0) INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (1, '2020-10-13 12:33:58.693908', '2020-10-13 12:33:58.694408', 0, 1, 'bdc', 33, 1)]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:646)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:53)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:83)
+	at liquibase.Liquibase.update(Liquibase.java:202)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 19 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ERROR: insert or update on table "coffee_order" violates foreign key constraint "fk3q81t12poq2k7e0avvvgyk10l"
+  Detail: Key (queue_detail_id)=(1) is not present in table "customer_queue_detail". [Failed SQL: (0) INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (1, '2020-10-13 12:33:58.693908', '2020-10-13 12:33:58.694408', 0, 1, 'bdc', 33, 1)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:402)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:59)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:131)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1276)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1258)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:609)
+	... 27 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: insert or update on table "coffee_order" violates foreign key constraint "fk3q81t12poq2k7e0avvvgyk10l"
+  Detail: Key (queue_detail_id)=(1) is not present in table "customer_queue_detail".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:473)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:393)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:279)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:398)
+	... 32 common frames omitted
+
+2020-10-13 17:12:41.182  INFO 15024 --- [main] com.prageeth.OrderServiceApplication     : Starting OrderServiceApplication on LAPTOP-KEDLI0GA with PID 15024 (D:\MyWork\new\CoffeeOrderService\target\classes started by Prageeth in D:\MyWork\new\CoffeeOrderService)
+2020-10-13 17:12:41.182  INFO 15024 --- [main] com.prageeth.OrderServiceApplication     : No active profile set, falling back to default profiles: default
+2020-10-13 17:12:42.517  INFO 15024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-13 17:12:42.601  INFO 15024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72ms. Found 3 JPA repository interfaces.
+2020-10-13 17:12:43.419  INFO 15024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-13 17:12:43.419  INFO 15024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-13 17:12:43.419  INFO 15024 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-13 17:12:43.557  INFO 15024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-13 17:12:43.557  INFO 15024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2306 ms
+2020-10-13 17:12:43.820  INFO 15024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-13 17:12:44.175  INFO 15024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-13 17:12:45.548  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 17:12:45.564  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangeloglock
+2020-10-13 17:12:45.564  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2020-10-13 17:12:45.579  INFO 15024 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2020-10-13 17:12:48.412  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2020-10-13 17:12:48.412  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM public.databasechangelog
+2020-10-13 17:12:48.412  INFO 15024 --- [main] l.c.StandardChangeLogHistoryService      : Reading from public.databasechangelog
+2020-10-13 17:12:48.412  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2020-10-13 17:12:48.464  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.master_queue_data (id, num_of_queues, shop_id) VALUES (1, 2, 1)
+2020-10-13 17:12:48.464  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into master_queue_data
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/dif.xml::1602588291756-3::Prageeth (generated) ran successfully in 15ms
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM public.databasechangelog
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602588291756-3', 'Prageeth (generated)', 'classpath:/db/changelog/dif.xml', NOW(), 8, '8:4561fe826fef51cba740557b76ea9f22', 'insert tableName=master_queue_data', '', 'EXECUTED', NULL, NULL, '3.8.9', '2589368412')
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.customer_queue_detail (id, created_date, last_modified_date, is_deleted, position, queue_id, shop_id, waiting_minutes) VALUES (1, '2020-10-13 12:33:58.664562', '2020-10-13 12:33:58.664562', 0, 1, 1, 1, 0.5)
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into customer_queue_detail
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.customer_queue_detail (id, created_date, last_modified_date, is_deleted, position, queue_id, shop_id, waiting_minutes) VALUES (2, '2020-10-13 12:34:03.80665', '2020-10-13 12:34:03.80665', 0, 1, 2, 1, 0.5)
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into customer_queue_detail
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.customer_queue_detail (id, created_date, last_modified_date, is_deleted, position, queue_id, shop_id, waiting_minutes) VALUES (3, '2020-10-13 12:34:05.000483', '2020-10-13 12:34:05.000483', 0, 2, 1, 1, 1.0)
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into customer_queue_detail
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.customer_queue_detail (id, created_date, last_modified_date, is_deleted, position, queue_id, shop_id, waiting_minutes) VALUES (4, '2020-10-13 16:42:30.586933', '2020-10-13 16:42:30.586933', 0, 2, 2, 1, 1.0)
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into customer_queue_detail
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.customer_queue_detail (id, created_date, last_modified_date, is_deleted, position, queue_id, shop_id, waiting_minutes) VALUES (5, '2020-10-13 16:43:06.972403', '2020-10-13 16:43:06.972403', 0, 3, 1, 1, 1.5)
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into customer_queue_detail
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/dif.xml::1602588291756-2::Prageeth (generated) ran successfully in 0ms
+2020-10-13 17:12:48.479  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602588291756-2', 'Prageeth (generated)', 'classpath:/db/changelog/dif.xml', NOW(), 9, '8:e2523441bcb2dadca3d25119efc6f46a', 'insert tableName=customer_queue_detail; insert tableName=customer_queue_detail; insert tableName=customer_queue_detail; insert tableName=customer_queue_detail; insert tableName=customer_queue_detail', '', 'EXECUTED', NULL, NULL, '3.8.9', '2589368412')
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (1, '2020-10-13 12:33:58.693908', '2020-10-13 12:33:58.694408', 0, 1, 'bdc', 33, 1)
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into coffee_order
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (2, '2020-10-13 12:34:03.808264', '2020-10-13 12:34:03.808264', 0, 1, 'bdc', 33, 2)
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into coffee_order
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (3, '2020-10-13 12:34:05.006836', '2020-10-13 12:34:05.006836', 0, 1, 'bdc', 33, 3)
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into coffee_order
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (4, '2020-10-13 16:42:30.60584', '2020-10-13 16:42:30.60584', 0, 1, 'bdc', 33, 4)
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into coffee_order
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.coffee_order (order_id, created_date, last_modified_date, is_inactive, shop_id, shop_name, user_id, queue_detail_id) VALUES (5, '2020-10-13 16:43:06.975495', '2020-10-13 16:43:06.975495', 0, 1, 'bdc', 33, 5)
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into coffee_order
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/dif.xml::1602588291756-1::Prageeth (generated) ran successfully in 0ms
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602588291756-1', 'Prageeth (generated)', 'classpath:/db/changelog/dif.xml', NOW(), 10, '8:869877359a625452a238dfc34754b887', 'insert tableName=coffee_order; insert tableName=coffee_order; insert tableName=coffee_order; insert tableName=coffee_order; insert tableName=coffee_order', '', 'EXECUTED', NULL, NULL, '3.8.9', '2589368412')
+2020-10-13 17:12:48.495  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (1, '2020-10-13 12:33:58.697101', '2020-10-13 12:33:58.697101', 0, 'QQ', 1, 1)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (2, '2020-10-13 12:33:58.701165', '2020-10-13 12:33:58.701165', 0, 'QW', 1, 1)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (5, '2020-10-13 12:34:05.006836', '2020-10-13 12:34:05.006836', 0, 'QQ', 1, 3)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (6, '2020-10-13 12:34:05.012885', '2020-10-13 12:34:05.012885', 0, 'QW', 1, 3)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (3, '2020-10-13 12:34:03.810631', '2020-10-13 12:34:03.810631', 0, 'QQ', 1, NULL)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (4, '2020-10-13 12:34:03.81257', '2020-10-13 12:34:03.81257', 0, 'QW', 1, NULL)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (7, '2020-10-13 12:34:28.358885', '2020-10-13 12:34:28.358885', 0, 'QQ1', 1, 2)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (8, '2020-10-13 12:34:28.362474', '2020-10-13 12:34:28.362474', 0, 'QW', 1, 2)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (9, '2020-10-13 16:42:30.610837', '2020-10-13 16:42:30.610837', 0, 'QQ', 1, 4)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (10, '2020-10-13 16:42:30.615837', '2020-10-13 16:42:30.615837', 0, 'QW', 1, 4)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.ordered_menu_item (menu_id, created_date, last_modified_date, is_deleted, item_name, num_of_items, order_id) VALUES (11, '2020-10-13 16:43:06.977408', '2020-10-13 16:43:06.977408', 0, 'QQ', 1, 5)
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : New row inserted into ordered_menu_item
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/dif.xml::1602588291756-4::Prageeth (generated) ran successfully in 16ms
+2020-10-13 17:12:48.511  INFO 15024 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO public.databasechangelog (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1602588291756-4', 'Prageeth (generated)', 'classpath:/db/changelog/dif.xml', NOW(), 11, '8:19a73eaa0704703748ed721cc9d19417', 'insert tableName=ordered_menu_item; insert tableName=ordered_menu_item; insert tableName=ordered_menu_item; insert tableName=ordered_menu_item; insert tableName=ordered_menu_item; insert tableName=ordered_menu_item; insert tableName=ordered_menu_i...', '', 'EXECUTED', NULL, NULL, '3.8.9', '2589368412')
+2020-10-13 17:12:48.526  INFO 15024 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2020-10-13 17:12:48.580  INFO 15024 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-13 17:12:48.633  INFO 15024 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-13 17:12:48.696  INFO 15024 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-13 17:12:48.865  INFO 15024 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-13 17:12:48.950  WARN 15024 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-13 17:12:49.034  INFO 15024 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-10-13 17:12:49.150  INFO 15024 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-10-13 17:12:49.250  INFO 15024 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-10-13 17:12:50.136  INFO 15024 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-13 17:12:50.152  INFO 15024 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-13 17:12:50.252  INFO 15024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-13 17:12:50.252  INFO 15024 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-10-13 17:12:50.268  INFO 15024 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-10-13 17:12:50.330  INFO 15024 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-10-13 17:12:50.500  INFO 15024 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-13 17:12:50.901  INFO 15024 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-13 17:12:50.917  INFO 15024 --- [main] com.prageeth.OrderServiceApplication     : Started OrderServiceApplication in 10.295 seconds (JVM running for 11.008)
+2020-10-13 17:14:14.608  INFO 15024 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-13 17:14:14.609  INFO 15024 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-13 17:14:14.618  INFO 15024 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-13 17:14:14.789  INFO 15024 --- [http-nio-8080-exec-2] c.p.service.impl.CoffeeOrderServiceImpl  : Order found - orderId: 2

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Prageeth (generated)" id="1602588291756-3">
+        <insert tableName="master_queue_data">
+            <column name="id" valueNumeric="1"/>
+            <column name="num_of_queues" valueNumeric="2"/>
+            <column name="shop_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1602588291756-2">
+        <insert tableName="customer_queue_detail">
+            <column name="id" valueNumeric="1"/>
+            <column name="created_date" valueDate="2020-10-13 12:33:58.664562"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:33:58.664562"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="position" valueNumeric="1"/>
+            <column name="queue_id" valueNumeric="1"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="waiting_minutes" valueNumeric="0.5"/>
+        </insert>
+        <insert tableName="customer_queue_detail">
+            <column name="id" valueNumeric="2"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:03.80665"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:03.80665"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="position" valueNumeric="1"/>
+            <column name="queue_id" valueNumeric="2"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="waiting_minutes" valueNumeric="0.5"/>
+        </insert>
+        <insert tableName="customer_queue_detail">
+            <column name="id" valueNumeric="3"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:05.000483"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:05.000483"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="position" valueNumeric="2"/>
+            <column name="queue_id" valueNumeric="1"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="waiting_minutes" valueNumeric="1.0"/>
+        </insert>
+        <insert tableName="customer_queue_detail">
+            <column name="id" valueNumeric="4"/>
+            <column name="created_date" valueDate="2020-10-13 16:42:30.586933"/>
+            <column name="last_modified_date" valueDate="2020-10-13 16:42:30.586933"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="position" valueNumeric="2"/>
+            <column name="queue_id" valueNumeric="2"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="waiting_minutes" valueNumeric="1.0"/>
+        </insert>
+        <insert tableName="customer_queue_detail">
+            <column name="id" valueNumeric="5"/>
+            <column name="created_date" valueDate="2020-10-13 16:43:06.972403"/>
+            <column name="last_modified_date" valueDate="2020-10-13 16:43:06.972403"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="position" valueNumeric="3"/>
+            <column name="queue_id" valueNumeric="1"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="waiting_minutes" valueNumeric="1.5"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1602588291756-1">
+        <insert tableName="coffee_order">
+            <column name="order_id" valueNumeric="1"/>
+            <column name="created_date" valueDate="2020-10-13 12:33:58.693908"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:33:58.694408"/>
+            <column name="is_inactive" valueNumeric="0"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="shop_name" value="bdc"/>
+            <column name="user_id" valueNumeric="33"/>
+            <column name="queue_detail_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coffee_order">
+            <column name="order_id" valueNumeric="2"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:03.808264"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:03.808264"/>
+            <column name="is_inactive" valueNumeric="0"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="shop_name" value="bdc"/>
+            <column name="user_id" valueNumeric="33"/>
+            <column name="queue_detail_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="coffee_order">
+            <column name="order_id" valueNumeric="3"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:05.006836"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:05.006836"/>
+            <column name="is_inactive" valueNumeric="0"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="shop_name" value="bdc"/>
+            <column name="user_id" valueNumeric="33"/>
+            <column name="queue_detail_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="coffee_order">
+            <column name="order_id" valueNumeric="4"/>
+            <column name="created_date" valueDate="2020-10-13 16:42:30.60584"/>
+            <column name="last_modified_date" valueDate="2020-10-13 16:42:30.60584"/>
+            <column name="is_inactive" valueNumeric="0"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="shop_name" value="bdc"/>
+            <column name="user_id" valueNumeric="33"/>
+            <column name="queue_detail_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="coffee_order">
+            <column name="order_id" valueNumeric="5"/>
+            <column name="created_date" valueDate="2020-10-13 16:43:06.975495"/>
+            <column name="last_modified_date" valueDate="2020-10-13 16:43:06.975495"/>
+            <column name="is_inactive" valueNumeric="0"/>
+            <column name="shop_id" valueNumeric="1"/>
+            <column name="shop_name" value="bdc"/>
+            <column name="user_id" valueNumeric="33"/>
+            <column name="queue_detail_id" valueNumeric="5"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1602588291756-4">
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="1"/>
+            <column name="created_date" valueDate="2020-10-13 12:33:58.697101"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:33:58.697101"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QQ"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="2"/>
+            <column name="created_date" valueDate="2020-10-13 12:33:58.701165"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:33:58.701165"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QW"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="5"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:05.006836"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:05.006836"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QQ"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="6"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:05.012885"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:05.012885"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QW"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="3"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:03.810631"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:03.810631"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QQ"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="4"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:03.81257"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:03.81257"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QW"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="7"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:28.358885"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:28.358885"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QQ1"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="8"/>
+            <column name="created_date" valueDate="2020-10-13 12:34:28.362474"/>
+            <column name="last_modified_date" valueDate="2020-10-13 12:34:28.362474"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QW"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="9"/>
+            <column name="created_date" valueDate="2020-10-13 16:42:30.610837"/>
+            <column name="last_modified_date" valueDate="2020-10-13 16:42:30.610837"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QQ"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="10"/>
+            <column name="created_date" valueDate="2020-10-13 16:42:30.615837"/>
+            <column name="last_modified_date" valueDate="2020-10-13 16:42:30.615837"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QW"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="ordered_menu_item">
+            <column name="menu_id" valueNumeric="11"/>
+            <column name="created_date" valueDate="2020-10-13 16:43:06.977408"/>
+            <column name="last_modified_date" valueDate="2020-10-13 16:43:06.977408"/>
+            <column name="is_deleted" valueNumeric="0"/>
+            <column name="item_name" value="QQ"/>
+            <column name="num_of_items" valueNumeric="1"/>
+            <column name="order_id" valueNumeric="5"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
