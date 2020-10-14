@@ -16,7 +16,7 @@ import java.util.Collections;
 
 @Configuration
 @EnableSwagger2
-public class SwaggerConfiguration   {
+public class SwaggerConfiguration {
 
     @Bean
     public Docket api() {
@@ -24,19 +24,18 @@ public class SwaggerConfiguration   {
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(Predicates.not(PathSelectors.regex("/error.*")))
-                .paths(Predicates.not(PathSelectors.regex("/actuator.*")))
                 .build()
                 .apiInfo(apiInfo())
                 .useDefaultResponseMessages(false);
     }
 
-    private ApiInfo apiInfo(){
+    private ApiInfo apiInfo() {
         return new ApiInfo(
                 "Coffee Order Service",
                 "API Documentation",
                 "1.0.0",
                 "",
-                new Contact("Prageeth","https://www.linkedin.com/in/prageethwanigasekara","prageetheranga@gmail.com"),
+                new Contact("Prageeth", "https://www.linkedin.com/in/prageethwanigasekara", "prageetheranga@gmail.com"),
                 "",
                 "",
                 Collections.emptyList()

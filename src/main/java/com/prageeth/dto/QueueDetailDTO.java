@@ -5,31 +5,31 @@ import io.swagger.annotations.ApiModel;
 @ApiModel
 public class QueueDetailDTO {
 
-    private int position;
-    private int queueId;
-    private int waitingMinutes;
+    private Integer position;
+    private Integer queueId;
+    private Double waitingMinutes;
 
-    public int getPosition() {
+    public Integer getPosition() {
         return position;
     }
 
-    public void setPosition(int position) {
+    public void setPosition(Integer position) {
         this.position = position;
     }
 
-    public int getQueueId() {
+    public Integer getQueueId() {
         return queueId;
     }
 
-    public void setQueueId(int queueId) {
+    public void setQueueId(Integer queueId) {
         this.queueId = queueId;
     }
 
-    public int getWaitingMinutes() {
+    public Double getWaitingMinutes() {
         return waitingMinutes;
     }
 
-    public void setWaitingMinutes(int waitingMinutes) {
+    public void setWaitingMinutes(Double waitingMinutes) {
         this.waitingMinutes = waitingMinutes;
     }
 }

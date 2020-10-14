@@ -3,7 +3,6 @@ package com.prageeth.entity;
 import javax.persistence.*;
 
 @Entity
-@Table
 public class MasterQueueData {
 
     @Id

@@ -7,7 +7,6 @@ import javax.persistence.*;
 
 
 @Entity
-@Table
 @Where(clause = "is_deleted = 0")
 @SQLDelete(sql = "UPDATE customer_queue_detail SET is_deleted = 1,last_modified_date =now()::timestamp WHERE id = ? AND is_deleted = 0")
 public class CustomerQueueDetail extends AbstractEntity {

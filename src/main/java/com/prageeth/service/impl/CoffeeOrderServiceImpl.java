@@ -15,6 +15,8 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,7 +43,9 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
+    @Cacheable(value = "order-cache")
     public CustomerOrderDTO getOrderById(int orderId) throws ResourceNotFoundException {
+        logger.debug("Searching order id in database : {}", orderId);
         Optional<CoffeeOrder> result = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
         CustomerOrderDTO response = modelMapper.map(result.get(), CustomerOrderDTO.class);
@@ -59,9 +63,13 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     }
 
     @Override
+    @CacheEvict(value = "order-cache",  key = "#orderId")
     public CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO orderDTO) throws ResourceNotFoundException {
         Optional<CoffeeOrder> coffeeOrder = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
+        if (coffeeOrder.get().getShopId() != orderDTO.getShopId()) {
+            throw new ResourceNotFoundException("Two different shopIds");
+        }
         CoffeeOrder result = save(orderDTO, coffeeOrder.get().getCustomerQueue());
         CustomerOrderDTO response = mapResponse(result);
         logger.info("Order successfully updated - orderId: {}", result.getOrderId());
@@ -69,6 +77,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     }
 
     @Override
+    @CacheEvict(value = "order-cache", key = "#orderId")
     public void cancelOrder(int orderId) throws ResourceNotFoundException {
         Optional<CoffeeOrder> response = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));

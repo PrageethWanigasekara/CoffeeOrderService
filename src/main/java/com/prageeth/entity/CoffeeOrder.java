@@ -7,8 +7,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table
-
 @Where(clause = "is_inactive = 0")
 @SQLDelete(sql = "UPDATE coffee_order SET is_inactive = 1,last_modified_date =now()::timestamp WHERE order_id = ? AND is_inactive = 0")
 public class CoffeeOrder extends AbstractEntity {

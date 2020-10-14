@@ -1,9 +1,6 @@
 package com.prageeth.dto;
 
-import io.swagger.annotations.ApiModel;
 
-
-@ApiModel
 public class MenuItemDTO {
 
     private String itemName;
