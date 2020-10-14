@@ -1,8 +1,5 @@
 package com.prageeth.dto;
 
-import io.swagger.annotations.ApiModel;
-
-@ApiModel
 public class QueueDetailDTO {
 
     private Integer position;

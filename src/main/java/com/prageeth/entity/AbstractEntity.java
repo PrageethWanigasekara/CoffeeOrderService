@@ -6,11 +6,10 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-public class AbstractEntity implements Serializable {
+public class AbstractEntity {
 
     @CreationTimestamp
     @Column(name="created_date",updatable = false)

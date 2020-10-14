@@ -1,13 +1,9 @@
 package com.prageeth.entity;
 
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 
 @Entity
-@Where(clause = "is_deleted = 0")
-@SQLDelete(sql = "UPDATE ordered_menu_item SET is_deleted = 1,last_modified_date =now()::timestamp WHERE menu_id = ? AND is_deleted = 0")
 public class OrderedMenuItem extends AbstractEntity{
 
     @Id
@@ -16,7 +12,6 @@ public class OrderedMenuItem extends AbstractEntity{
 
     private String itemName;
     private Integer numOfItems;
-    private int isDeleted;
 
     public Integer getMenuId() {
         return menuId;
@@ -42,11 +37,4 @@ public class OrderedMenuItem extends AbstractEntity{
         this.numOfItems = numOfItems;
     }
 
-    public int getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(int isDeleted) {
-        this.isDeleted = isDeleted;
-    }
 }

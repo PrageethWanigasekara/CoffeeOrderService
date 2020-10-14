@@ -19,7 +19,7 @@ public class CoffeeOrder extends AbstractEntity {
 
     private String shopName;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "order_id")
     private List<OrderedMenuItem> orderedMenuItem;
 
