@@ -1,6 +1,5 @@
 package com.prageeth.dto;
 
-
 public class MenuItemDTO {
 
     private String itemName;

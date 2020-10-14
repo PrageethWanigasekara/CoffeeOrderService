@@ -1,9 +1,5 @@
 package com.prageeth.dto;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -14,7 +10,6 @@ public class OrderDTO {
     private Integer orderId;
 
     @NotNull(message = "shopId can not be null")
-    @ApiModelProperty(notes = "Please provide shopId")
     private Integer shopId;
 
     @NotEmpty(message = "shopName can not be null or empty")

@@ -67,7 +67,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     public CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO orderDTO) throws ResourceNotFoundException {
         Optional<CoffeeOrder> coffeeOrder = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
-        if (coffeeOrder.get().getShopId() != orderDTO.getShopId()) {
+        if (coffeeOrder.get().getShopId().equals(orderDTO.getShopId())) {
             throw new ResourceNotFoundException("Two different shopIds");
         }
         CoffeeOrder result = save(orderDTO, coffeeOrder.get().getCustomerQueue());
@@ -88,7 +88,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     }
 
     @Transactional
-    private CoffeeOrder save(OrderDTO orderDTO, CustomerQueueDetail customerQueueDetail) throws ResourceNotFoundException {
+    public CoffeeOrder save(OrderDTO orderDTO, CustomerQueueDetail customerQueueDetail) throws ResourceNotFoundException {
         CoffeeOrder order = modelMapper.map(orderDTO, CoffeeOrder.class);
         if (customerQueueDetail != null) {
             order.setCustomerQueue(customerQueueDetail);
