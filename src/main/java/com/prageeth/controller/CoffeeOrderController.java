@@ -2,6 +2,8 @@ package com.prageeth.controller;
 
 import com.prageeth.dto.CustomerOrderDTO;
 import com.prageeth.dto.OrderDTO;
+import com.prageeth.exception.AuthException;
+import com.prageeth.exception.JwtTokenException;
 import com.prageeth.exception.ResourceNotFoundException;
 import com.prageeth.service.CoffeeOrderService;
 import com.prageeth.utility.EndPointNamingUtil;
@@ -24,27 +26,27 @@ public class CoffeeOrderController extends BaseController {
     private CoffeeOrderService coffeeOrderService;
 
     @GetMapping(value = EndPointNamingUtil.ORDER_ID)
-    public ResponseEntity<CustomerOrderDTO> getOrderById(@PathVariable Integer orderId, HttpServletRequest httpServletRequest) throws ResourceNotFoundException {
-        checkAuthentication(httpServletRequest);
-        return new ResponseEntity(coffeeOrderService.getOrderById(orderId), HttpStatus.OK);
+    public ResponseEntity<CustomerOrderDTO> getOrderById(@PathVariable Integer orderId, HttpServletRequest httpServletRequest) throws ResourceNotFoundException, AuthException, JwtTokenException {
+        int userId = checkAuthentication(httpServletRequest);
+        return new ResponseEntity(coffeeOrderService.getOrderById(orderId,userId), HttpStatus.OK);
     }
 
     @PostMapping(value = EndPointNamingUtil.ORDER)
-    public ResponseEntity<CustomerOrderDTO> addNewOrder(@Valid @RequestBody OrderDTO request, HttpServletRequest httpServletRequest) throws ResourceNotFoundException {
-        checkAuthentication(httpServletRequest);
-        return new ResponseEntity(coffeeOrderService.addNewOrder(request), HttpStatus.OK);
+    public ResponseEntity<CustomerOrderDTO> addNewOrder(@Valid @RequestBody OrderDTO request, HttpServletRequest httpServletRequest) throws ResourceNotFoundException, AuthException, JwtTokenException {
+        int userId = checkAuthentication(httpServletRequest);
+        return new ResponseEntity(coffeeOrderService.addNewOrder(request,userId), HttpStatus.OK);
     }
 
     @PutMapping(value = EndPointNamingUtil.ORDER_ID)
-    public ResponseEntity<CustomerOrderDTO> changeOrder(@PathVariable Integer orderId, @Valid @RequestBody CustomerOrderDTO request, HttpServletRequest httpServletRequest) throws ResourceNotFoundException {
-        checkAuthentication(httpServletRequest);
-        return new ResponseEntity(coffeeOrderService.changeOrder(orderId, request), HttpStatus.OK);
+    public ResponseEntity<CustomerOrderDTO> changeOrder(@PathVariable Integer orderId, @Valid @RequestBody CustomerOrderDTO request, HttpServletRequest httpServletRequest) throws ResourceNotFoundException, AuthException, JwtTokenException {
+        int userId = checkAuthentication(httpServletRequest);
+        return new ResponseEntity(coffeeOrderService.changeOrder(orderId, request,userId), HttpStatus.OK);
     }
 
     @DeleteMapping(value = EndPointNamingUtil.ORDER_ID)
-    public ResponseEntity<String> cancelOrder(@PathVariable Integer orderId, HttpServletRequest httpServletRequest) throws ResourceNotFoundException {
-        checkAuthentication(httpServletRequest);
-        coffeeOrderService.cancelOrder(orderId);
+    public ResponseEntity<String> cancelOrder(@PathVariable Integer orderId, HttpServletRequest httpServletRequest) throws ResourceNotFoundException, AuthException, JwtTokenException {
+        int userId = checkAuthentication(httpServletRequest);
+        coffeeOrderService.cancelOrder(orderId,userId);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 

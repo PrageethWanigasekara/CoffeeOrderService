@@ -1,5 +1,6 @@
 package com.prageeth.exception;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -41,16 +42,43 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         ErrorResponse response = new ErrorResponse();
         response.setError(exception.getMessage());
         response.setStatus(HttpStatus.BAD_REQUEST.value());
-        logger.error("Error : {}", exception.getMessage());
+        logger.error("Not found error : {}", exception.getMessage());
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(AuthException.class)
+    public ResponseEntity<ErrorResponse> handleAuthException(AuthException exception) {
+        ErrorResponse response = new ErrorResponse();
+        response.setError(exception.getMessage());
+        response.setStatus(HttpStatus.FORBIDDEN.value());
+        logger.error("Auth error : {}", exception.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
+    }
+
+    @ExceptionHandler(JwtTokenException.class)
+    public ResponseEntity<ErrorResponse> handleJwtTokenException(JwtTokenException exception) {
+        ErrorResponse response = new ErrorResponse();
+        response.setError(exception.getMessage());
+        response.setStatus(HttpStatus.UNAUTHORIZED.value());
+        logger.error("JWT error : {}", exception.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(ExpiredJwtException.class)
+    public ResponseEntity<ErrorResponse> handleExpiredJwtException(ExpiredJwtException exception) {
+        ErrorResponse response = new ErrorResponse();
+        response.setError("JWT token expired");
+        response.setStatus(HttpStatus.UNAUTHORIZED.value());
+        logger.error("JWT error : {}", exception.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler()
     public ResponseEntity<ErrorResponse> handleAnyException(Exception exception) {
         ErrorResponse response = new ErrorResponse();
-        response.setError("Server Error Occurred");
+        response.setError("Server error Occurred");
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
-        logger.error("Server Error : {}", exception.getMessage());
+        logger.error("Runtime exception : {}", exception.getMessage());
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

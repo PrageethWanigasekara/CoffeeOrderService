@@ -2,13 +2,13 @@ package com.prageeth.dto;
 
 public class CustomerOrderDTO extends OrderDTO {
 
-    private QueueDetailDTO queueDetailDTO;
+    private QueueDetailDTO queueDetails;
 
-    public QueueDetailDTO getQueueDetailDTO() {
-        return queueDetailDTO;
+    public QueueDetailDTO getQueueDetails() {
+        return queueDetails;
     }
 
-    public void setQueueDetailDTO(QueueDetailDTO queueDetailDTO) {
-        this.queueDetailDTO = queueDetailDTO;
+    public void setQueueDetails(QueueDetailDTO queueDetails) {
+        this.queueDetails = queueDetails;
     }
 }

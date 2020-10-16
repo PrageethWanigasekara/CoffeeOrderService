@@ -18,9 +18,6 @@ public class OrderDTO {
     @NotEmpty(message = "menuItems can not be null or empty")
     private List<MenuItemDTO> orderedMenuItem;
 
-    @NotNull(message = "userId can not be null")
-    private Integer userId;
-
     public Integer getOrderId() {
         return orderId;
     }
@@ -53,11 +50,4 @@ public class OrderDTO {
         this.orderedMenuItem = orderedMenuItem;
     }
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
 }

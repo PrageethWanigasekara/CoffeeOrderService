@@ -5,6 +5,6 @@ package com.prageeth.utility;
  */
 public class ConstantUtil {
 
-    public static final String API_HEADER = "API_HEADER";
+    public static final String AUTHORIZATION_HEADER = "Authorization";
 
 }

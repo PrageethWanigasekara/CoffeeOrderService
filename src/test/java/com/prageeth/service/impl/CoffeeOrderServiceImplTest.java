@@ -83,7 +83,7 @@ class CoffeeOrderServiceImplTest {
     void getOrderByIdPassTest() {
         CustomerOrderDTO found = null;
         try {
-            found = coffeeOrderService.getOrderById(100);
+            found = coffeeOrderService.getOrderById(100, 100);
         } catch (ResourceNotFoundException exception) {
             exception.printStackTrace();
         }
@@ -96,7 +96,7 @@ class CoffeeOrderServiceImplTest {
         CustomerOrderDTO found = null;
         boolean status =false;
         try {
-            found = coffeeOrderService.getOrderById(10);
+            found = coffeeOrderService.getOrderById(100, 10);
         } catch (ResourceNotFoundException exception) {
             status = true;
         }
@@ -110,7 +110,7 @@ class CoffeeOrderServiceImplTest {
         CustomerOrderDTO found = null;
         boolean status =false;
         try {
-            coffeeOrderService.addNewOrder(orderDTO);
+            coffeeOrderService.addNewOrder(orderDTO, 1);
         } catch (ResourceNotFoundException exception) {
             status = true;
         }
@@ -126,7 +126,7 @@ class CoffeeOrderServiceImplTest {
         CustomerOrderDTO found = null;
         boolean status =false;
         try {
-            coffeeOrderService.changeOrder(10,customerOrderDTO);
+            coffeeOrderService.changeOrder(10,customerOrderDTO, 1);
         } catch (ResourceNotFoundException exception) {
             status = true;
         }
@@ -138,7 +138,7 @@ class CoffeeOrderServiceImplTest {
         Mockito.when(coffeeOrderRepository.findById(10)).thenReturn(java.util.Optional.ofNullable(null));
         boolean status =false;
         try {
-            coffeeOrderService.cancelOrder(10);
+            coffeeOrderService.cancelOrder(10, 1);
         } catch (ResourceNotFoundException exception) {
             status = true;
         }

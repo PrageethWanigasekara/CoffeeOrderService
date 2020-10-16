@@ -9,12 +9,12 @@ import com.prageeth.exception.ResourceNotFoundException;
  */
 public interface CoffeeOrderService {
 
-    CustomerOrderDTO getOrderById(int orderId) throws ResourceNotFoundException;
+    CustomerOrderDTO getOrderById(Integer orderId, int userId) throws ResourceNotFoundException;
 
-    CustomerOrderDTO addNewOrder(OrderDTO orderDTO) throws ResourceNotFoundException;
+    CustomerOrderDTO addNewOrder(OrderDTO orderDTO, int userId) throws ResourceNotFoundException;
 
-    CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO customerOrderDTO) throws ResourceNotFoundException;
+    CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO customerOrderDTO, int userId) throws ResourceNotFoundException;
 
-    void cancelOrder(int orderId) throws ResourceNotFoundException;
+    void cancelOrder(int orderId, int userId) throws ResourceNotFoundException;
 
 }
