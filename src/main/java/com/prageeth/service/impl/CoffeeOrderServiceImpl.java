@@ -57,6 +57,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     }
 
     @Override
+    @Transactional
     public CustomerOrderDTO addNewOrder(OrderDTO orderDTO, int userId) throws ResourceNotFoundException {
         CoffeeOrder result = save(orderDTO, null,userId);
         CustomerOrderDTO response = mapResponse(result);
@@ -66,6 +67,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Override
     @CacheEvict(value = "order-cache",  key = "#orderId")
+    @Transactional
     public CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO orderDTO, int userId) throws ResourceNotFoundException, AuthException {
         Optional<CoffeeOrder> coffeeOrder = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
@@ -81,6 +83,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Override
     @CacheEvict(value = "order-cache", allEntries = true)
+    @Transactional
     public void cancelOrder(int orderId, int userId) throws ResourceNotFoundException, AuthException {
         Optional<CoffeeOrder> response = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
@@ -91,7 +94,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
         logger.info("Queues successfully updated");
     }
 
-    @Transactional
+
     public CoffeeOrder save(OrderDTO orderDTO, CustomerQueueDetail customerQueueDetail,int userId) throws ResourceNotFoundException {
         CoffeeOrder order = modelMapper.map(orderDTO, CoffeeOrder.class);
         order.setUserId(userId);

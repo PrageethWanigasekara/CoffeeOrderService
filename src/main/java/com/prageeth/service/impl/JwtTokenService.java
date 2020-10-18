@@ -19,7 +19,7 @@ public class JwtTokenService implements Serializable {
 
     public static final long JWT_TOKEN_VALIDITY = 300000; // 5 minutes
 
-    private final String SECRET = "secret";
+    private static final String SECRET = "secret";
 
     public String getUserNameFromToken(String token) {
         final Claims claims = getClaims(token);

@@ -26,9 +26,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         List<String> errors = new ArrayList<>();
-        ex.getBindingResult().getAllErrors().forEach((error) -> {
-            errors.add(error.getDefaultMessage());
-        });
+        ex.getBindingResult().getAllErrors().
+                forEach(error -> errors.add(error.getDefaultMessage()));
         logger.error("Validation error : {}",errors);
         ErrorResponse response = new ErrorResponse();
         response.setError(errors.toString());
