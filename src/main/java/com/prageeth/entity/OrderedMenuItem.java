@@ -4,6 +4,7 @@ package com.prageeth.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "menu_item")
 public class OrderedMenuItem extends AbstractEntity{
 
     @Id

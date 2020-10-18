@@ -2,6 +2,7 @@ package com.prageeth.service;
 
 import com.prageeth.dto.CustomerOrderDTO;
 import com.prageeth.dto.OrderDTO;
+import com.prageeth.exception.AuthException;
 import com.prageeth.exception.ResourceNotFoundException;
 
 /**
@@ -9,12 +10,12 @@ import com.prageeth.exception.ResourceNotFoundException;
  */
 public interface CoffeeOrderService {
 
-    CustomerOrderDTO getOrderById(Integer orderId, int userId) throws ResourceNotFoundException;
+    CustomerOrderDTO getOrderById(Integer orderId, int userId) throws ResourceNotFoundException, AuthException;
 
     CustomerOrderDTO addNewOrder(OrderDTO orderDTO, int userId) throws ResourceNotFoundException;
 
-    CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO customerOrderDTO, int userId) throws ResourceNotFoundException;
+    CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO customerOrderDTO, int userId) throws ResourceNotFoundException, AuthException;
 
-    void cancelOrder(int orderId, int userId) throws ResourceNotFoundException;
+    void cancelOrder(int orderId, int userId) throws ResourceNotFoundException, AuthException;
 
 }

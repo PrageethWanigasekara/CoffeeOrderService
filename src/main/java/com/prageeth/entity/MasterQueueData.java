@@ -3,6 +3,7 @@ package com.prageeth.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "shop_queue_detail")
 public class MasterQueueData {
 
     @Id

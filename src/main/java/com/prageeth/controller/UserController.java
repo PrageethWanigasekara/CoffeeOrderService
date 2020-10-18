@@ -7,6 +7,7 @@ import com.prageeth.entity.UserInfo;
 import com.prageeth.exception.AuthException;
 import com.prageeth.service.UserInfoService;
 import com.prageeth.service.impl.JwtTokenService;
+import com.prageeth.utility.UrlNamingUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,17 +26,16 @@ public class UserController {
     private UserInfoService userInfoService;
 
 
-    @PostMapping("/register")
+    @PostMapping(UrlNamingUtil.USER_MGT_URL)
     public ResponseEntity<String> addNewUser(@RequestBody UserDTO user) {
         userInfoService.save(user);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PostMapping("/authenticate")
+    @PostMapping(UrlNamingUtil.USER_AUTH_URL)
     public ResponseEntity<AuthenticateResponseDTO> authenticateUser(@RequestBody AuthenticateRequestDTO request) throws AuthException {
         UserInfo userInfo = userInfoService.validateUser(request);
         return new ResponseEntity(new AuthenticateResponseDTO(jwtTokenService.generateToken(userInfo)),HttpStatus.OK);
     }
-
 
 }

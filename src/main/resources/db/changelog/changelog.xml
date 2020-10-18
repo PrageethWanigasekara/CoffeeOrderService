@@ -1,66 +1,90 @@
-<?xml version="1.1" encoding="UTF-8" standalone="no"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.0.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
-    <changeSet author="Prageeth (generated)" id="1602678605783-1">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Prageeth (generated)" id="1603014582500-1">
+        <createSequence sequenceName="coffee_order_order_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603014582500-2">
+        <createSequence sequenceName="customer_queue_detail_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603014582500-3">
+        <createSequence sequenceName="menu_item_menu_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603014582500-4">
+        <createSequence sequenceName="shop_queue_detail_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603014582500-5">
+        <createSequence sequenceName="user_info_user_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603014582500-6">
         <createTable tableName="coffee_order">
-            <column autoIncrement="true" name="order_id" type="INTEGER">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="coffee_order_pkey"/>
+            <column autoIncrement="true" name="order_id" type="INT">
+                <constraints primaryKey="true" primaryKeyName="coffee_order_pkey"/>
             </column>
             <column defaultValueComputed="CURRENT_TIMESTAMP" name="created_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
             <column defaultValueComputed="CURRENT_TIMESTAMP" name="last_modified_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
-            <column name="is_inactive" type="INTEGER">
+            <column name="is_inactive" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="shop_id" type="INTEGER"/>
+            <column name="shop_id" type="INT"/>
             <column name="shop_name" type="VARCHAR(255)"/>
-            <column name="user_id" type="INTEGER"/>
-            <column name="queue_detail_id" type="INTEGER"/>
+            <column name="user_id" type="INT"/>
+            <column name="queue_detail_id" type="INT"/>
         </createTable>
     </changeSet>
-    <changeSet author="Prageeth (generated)" id="1602678605783-2">
+    <changeSet author="Prageeth (generated)" id="1603014582500-7">
         <createTable tableName="customer_queue_detail">
-            <column autoIncrement="true" name="id" type="INTEGER">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="customer_queue_detail_pkey"/>
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true" primaryKeyName="customer_queue_detail_pkey"/>
             </column>
             <column defaultValueComputed="CURRENT_TIMESTAMP" name="created_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
             <column defaultValueComputed="CURRENT_TIMESTAMP" name="last_modified_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
-            <column name="is_deleted" type="INTEGER">
+            <column name="is_deleted" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="position" type="INTEGER"/>
-            <column name="queue_id" type="INTEGER"/>
-            <column name="shop_id" type="INTEGER"/>
+            <column name="position" type="INT"/>
+            <column name="queue_id" type="INT"/>
+            <column name="shop_id" type="INT"/>
             <column name="waiting_minutes" type="FLOAT8"/>
         </createTable>
     </changeSet>
-    <changeSet author="Prageeth (generated)" id="1602678605783-3">
-        <createTable tableName="ordered_menu_item">
-            <column autoIncrement="true" name="menu_id" type="INTEGER">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="ordered_menu_item_pkey"/>
+    <changeSet author="Prageeth (generated)" id="1603014582500-8">
+        <createTable tableName="menu_item">
+            <column autoIncrement="true" name="menu_id" type="INT">
+                <constraints primaryKey="true" primaryKeyName="menu_item_pkey"/>
             </column>
             <column defaultValueComputed="CURRENT_TIMESTAMP" name="created_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
             <column defaultValueComputed="CURRENT_TIMESTAMP" name="last_modified_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
             <column name="item_name" type="VARCHAR(255)"/>
-            <column name="num_of_items" type="INTEGER"/>
-            <column name="order_id" type="INTEGER"/>
+            <column name="num_of_items" type="INT"/>
+            <column name="order_id" type="INT"/>
         </createTable>
     </changeSet>
-    <changeSet author="Prageeth (generated)" id="1602678605783-4">
-        <createTable tableName="master_queue_data">
-            <column autoIncrement="true" name="id" type="INTEGER">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="master_queue_data_pkey"/>
+    <changeSet author="Prageeth (generated)" id="1603014582500-9">
+        <createTable tableName="shop_queue_detail">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true" primaryKeyName="shop_queue_detail_pkey"/>
             </column>
-            <column name="num_of_queues" type="INTEGER"/>
-            <column name="shop_id" type="INTEGER"/>
+            <column name="num_of_queues" type="INT"/>
+            <column name="shop_id" type="INT"/>
         </createTable>
     </changeSet>
-    <changeSet author="Prageeth (generated)" id="1602678605783-5">
-        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="ordered_menu_item" constraintName="fkokjo7gdkt1gg66tmyycvmlv29" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="order_id" referencedTableName="coffee_order" validate="true"/>
+    <changeSet author="Prageeth (generated)" id="1603014582500-10">
+        <createTable tableName="user_info">
+            <column autoIncrement="true" name="user_id" type="INT">
+                <constraints primaryKey="true" primaryKeyName="user_info_pkey"/>
+            </column>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="user_name" type="VARCHAR(255)"/>
+        </createTable>
     </changeSet>
-    <changeSet author="Prageeth (generated)" id="1602678605783-6">
-        <addForeignKeyConstraint baseColumnNames="queue_detail_id" baseTableName="coffee_order" constraintName="fk3q81t12poq2k7e0avvvgyk10l" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="customer_queue_detail" validate="true"/>
+    <changeSet author="Prageeth (generated)" id="1603014582500-11">
+        <addForeignKeyConstraint baseColumnNames="queue_detail_id" baseTableName="coffee_order" constraintName="fk3q81t12poq2k7e0avvvgyk10l" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="customer_queue_detail"/>
     </changeSet>
-    <changeSet author="Prageeth (generated)" id="1602678605783-7">
-        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="hibernate_sequence" startValue="1"/>
+    <changeSet author="Prageeth (generated)" id="1603014582500-12">
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="menu_item" constraintName="fkot0upk62mle8wb7ufumtxf7ly" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="order_id" referencedTableName="coffee_order"/>
     </changeSet>
     <include file="dif-changelog.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

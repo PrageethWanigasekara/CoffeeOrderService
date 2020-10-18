@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Prageeth (generated)" id="1603015438939-1">
+        <dropForeignKeyConstraint baseTableName="coffee_order" constraintName="fk3q81t12poq2k7e0avvvgyk10l"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-2">
+        <dropForeignKeyConstraint baseTableName="menu_item" constraintName="fkot0upk62mle8wb7ufumtxf7ly"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-3">
+        <dropSequence sequenceName="coffee_order_order_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-4">
+        <dropSequence sequenceName="coffee_order_order_id_seq1"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-5">
+        <dropSequence sequenceName="customer_queue_detail_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-6">
+        <dropSequence sequenceName="customer_queue_detail_id_seq1"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-7">
+        <dropSequence sequenceName="menu_item_menu_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-8">
+        <dropSequence sequenceName="menu_item_menu_id_seq1"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-9">
+        <dropSequence sequenceName="shop_queue_detail_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-10">
+        <dropSequence sequenceName="shop_queue_detail_id_seq1"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-11">
+        <dropSequence sequenceName="user_info_user_id_seq"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-12">
+        <dropSequence sequenceName="user_info_user_id_seq1"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-13">
+        <dropTable tableName="coffee_order"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-14">
+        <dropTable tableName="customer_queue_detail"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-15">
+        <dropTable tableName="menu_item"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-16">
+        <dropTable tableName="shop_queue_detail"/>
+    </changeSet>
+    <changeSet author="Prageeth (generated)" id="1603015438939-17">
+        <dropTable tableName="user_info"/>
+    </changeSet>
+</databaseChangeLog>

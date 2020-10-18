@@ -6,6 +6,7 @@ import com.prageeth.dto.QueueDetailDTO;
 import com.prageeth.entity.CoffeeOrder;
 import com.prageeth.entity.CustomerQueueDetail;
 import com.prageeth.entity.MasterQueueData;
+import com.prageeth.exception.AuthException;
 import com.prageeth.exception.ResourceNotFoundException;
 import com.prageeth.repository.CoffeeOrderRepository;
 import com.prageeth.repository.CustomerQueueDetailRepository;
@@ -44,10 +45,11 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Override
     @Cacheable(value = "order-cache")
-    public CustomerOrderDTO getOrderById(Integer orderId, int userId) throws ResourceNotFoundException {
+    public CustomerOrderDTO getOrderById(Integer orderId, int userId) throws ResourceNotFoundException, AuthException {
         logger.info("Searching order id in database : {}", orderId);
         Optional<CoffeeOrder> result = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
+        validateUser(result.get(),userId);
         CustomerOrderDTO response = modelMapper.map(result.get(), CustomerOrderDTO.class);
         response.setQueueDetails(modelMapper.map(result.get().getCustomerQueue(), QueueDetailDTO.class));
         logger.info("Order found - orderId: {}", orderId);
@@ -56,7 +58,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Override
     public CustomerOrderDTO addNewOrder(OrderDTO orderDTO, int userId) throws ResourceNotFoundException {
-        CoffeeOrder result = save(orderDTO, null);
+        CoffeeOrder result = save(orderDTO, null,userId);
         CustomerOrderDTO response = mapResponse(result);
         logger.info("Order successfully created - orderId: {}", result.getOrderId());
         return response;
@@ -64,23 +66,25 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Override
     @CacheEvict(value = "order-cache",  key = "#orderId")
-    public CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO orderDTO, int userId) throws ResourceNotFoundException {
+    public CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO orderDTO, int userId) throws ResourceNotFoundException, AuthException {
         Optional<CoffeeOrder> coffeeOrder = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
+        validateUser(coffeeOrder.get(),userId);
         if (!coffeeOrder.get().getShopId().equals(orderDTO.getShopId())) {
             throw new ResourceNotFoundException("Two different shopIds");
         }
-        CoffeeOrder result = save(orderDTO, coffeeOrder.get().getCustomerQueue());
+        CoffeeOrder result = save(orderDTO, coffeeOrder.get().getCustomerQueue(),userId);
         CustomerOrderDTO response = mapResponse(result);
         logger.info("Order successfully updated - orderId: {}", result.getOrderId());
         return response;
     }
 
     @Override
-    @CacheEvict(value = "order-cache", key = "#orderId")
-    public void cancelOrder(int orderId, int userId) throws ResourceNotFoundException {
+    @CacheEvict(value = "order-cache", allEntries = true)
+    public void cancelOrder(int orderId, int userId) throws ResourceNotFoundException, AuthException {
         Optional<CoffeeOrder> response = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
+        validateUser(response.get(),userId);
         coffeeOrderRepository.deleteById(orderId);
         logger.info("Order successfully canceled - orderId: {}", orderId);
         updateQueuePosition(response.get());
@@ -88,8 +92,9 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     }
 
     @Transactional
-    public CoffeeOrder save(OrderDTO orderDTO, CustomerQueueDetail customerQueueDetail) throws ResourceNotFoundException {
+    public CoffeeOrder save(OrderDTO orderDTO, CustomerQueueDetail customerQueueDetail,int userId) throws ResourceNotFoundException {
         CoffeeOrder order = modelMapper.map(orderDTO, CoffeeOrder.class);
+        order.setUserId(userId);
         if (customerQueueDetail != null) {
             order.setCustomerQueue(customerQueueDetail);
         } else {
@@ -193,5 +198,11 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
         CustomerOrderDTO response = modelMapper.map(result, CustomerOrderDTO.class);
         response.setQueueDetails(modelMapper.map(result.getCustomerQueue(), QueueDetailDTO.class));
         return response;
+    }
+
+    private void validateUser(CoffeeOrder order,int userId) throws AuthException {
+        if(userId!=order.getUserId()){
+            throw new AuthException("Not a valid user - id : " + userId);
+        }
     }
 }

@@ -6,5 +6,4 @@ package com.prageeth.utility;
 public class EndPointNamingUtil {
 
     public static final String ORDER_ID = "/{orderId}";
-    public static final String ORDER= "/order";
 }
