@@ -4,7 +4,8 @@ import com.prageeth.dto.AuthenticateRequestDTO;
 import com.prageeth.dto.UserDTO;
 import com.prageeth.entity.UserInfo;
 import com.prageeth.exception.AuthException;
-import com.prageeth.exception.ResourceNotFoundException;
+import com.prageeth.exception.ExistingResourceException;
+import com.prageeth.exception.BadRequestDataException;
 import com.prageeth.repository.UserInfoRepository;
 import com.prageeth.service.UserInfoService;
 import org.modelmapper.ModelMapper;
@@ -24,16 +25,20 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    public UserInfo save(UserDTO userDTO) {
+    public UserInfo save(UserDTO userDTO) throws ExistingResourceException {
+        UserInfo user = userInfoRepository.findByUserName(userDTO.getUserName());
+        if(user!=null){
+            throw new ExistingResourceException("Username : "+userDTO.getUserName());
+        }
         UserInfo userInfo = modelMapper.map(userDTO, UserInfo.class);
         userInfo.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         return userInfoRepository.save(userInfo);
     }
 
-    public UserInfo findUser(String userName) throws ResourceNotFoundException {
+    public UserInfo findUser(String userName) throws BadRequestDataException {
         UserInfo user = userInfoRepository.findByUserName(userName);
         if (user == null) {
-            throw new ResourceNotFoundException("userName : "+userName);
+            throw new BadRequestDataException("userName : "+userName);
         }
         return user;
     }

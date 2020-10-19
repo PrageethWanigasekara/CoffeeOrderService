@@ -3,7 +3,7 @@ package com.prageeth.controller;
 import com.prageeth.entity.UserInfo;
 import com.prageeth.exception.AuthException;
 import com.prageeth.exception.JwtTokenException;
-import com.prageeth.exception.ResourceNotFoundException;
+import com.prageeth.exception.BadRequestDataException;
 import com.prageeth.service.UserInfoService;
 import com.prageeth.service.impl.JwtTokenService;
 import com.prageeth.utility.ConstantUtil;
@@ -19,7 +19,7 @@ public class BaseController {
     @Autowired
     private UserInfoService userInfoService;
 
-    protected int checkAuthentication(HttpServletRequest httpServletRequest) throws AuthException, ResourceNotFoundException, JwtTokenException {
+    protected int checkAuthentication(HttpServletRequest httpServletRequest) throws AuthException, BadRequestDataException, JwtTokenException {
 
         String authorizationHeader = httpServletRequest.getHeader(ConstantUtil.AUTHORIZATION_HEADER);
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {

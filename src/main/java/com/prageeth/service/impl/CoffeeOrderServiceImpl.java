@@ -7,7 +7,7 @@ import com.prageeth.entity.CoffeeOrder;
 import com.prageeth.entity.CustomerQueueDetail;
 import com.prageeth.entity.MasterQueueData;
 import com.prageeth.exception.AuthException;
-import com.prageeth.exception.ResourceNotFoundException;
+import com.prageeth.exception.BadRequestDataException;
 import com.prageeth.repository.CoffeeOrderRepository;
 import com.prageeth.repository.CustomerQueueDetailRepository;
 import com.prageeth.repository.MasterQueueDataRepository;
@@ -45,10 +45,10 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Override
     @Cacheable(value = "order-cache")
-    public CustomerOrderDTO getOrderById(Integer orderId, int userId) throws ResourceNotFoundException, AuthException {
+    public CustomerOrderDTO getOrderById(Integer orderId, int userId) throws BadRequestDataException, AuthException {
         logger.info("Searching order id in database : {}", orderId);
         Optional<CoffeeOrder> result = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
-                .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
+                .orElseThrow(() -> new BadRequestDataException("orderId : " + orderId)));
         validateUser(result.get(),userId);
         CustomerOrderDTO response = modelMapper.map(result.get(), CustomerOrderDTO.class);
         response.setQueueDetails(modelMapper.map(result.get().getCustomerQueue(), QueueDetailDTO.class));
@@ -58,7 +58,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Override
     @Transactional
-    public CustomerOrderDTO addNewOrder(OrderDTO orderDTO, int userId) throws ResourceNotFoundException {
+    public CustomerOrderDTO addNewOrder(OrderDTO orderDTO, int userId) throws BadRequestDataException {
         CoffeeOrder result = save(orderDTO, null,userId);
         CustomerOrderDTO response = mapResponse(result);
         logger.info("Order successfully created - orderId: {}", result.getOrderId());
@@ -68,12 +68,12 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     @Override
     @CacheEvict(value = "order-cache",  key = "#orderId")
     @Transactional
-    public CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO orderDTO, int userId) throws ResourceNotFoundException, AuthException {
+    public CustomerOrderDTO changeOrder(int orderId, CustomerOrderDTO orderDTO, int userId) throws BadRequestDataException, AuthException {
         Optional<CoffeeOrder> coffeeOrder = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
-                .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
+                .orElseThrow(() -> new BadRequestDataException("orderId : " + orderId)));
         validateUser(coffeeOrder.get(),userId);
         if (!coffeeOrder.get().getShopId().equals(orderDTO.getShopId())) {
-            throw new ResourceNotFoundException("Two different shopIds");
+            throw new BadRequestDataException("Two different shopIds");
         }
         CoffeeOrder result = save(orderDTO, coffeeOrder.get().getCustomerQueue(),userId);
         CustomerOrderDTO response = mapResponse(result);
@@ -84,9 +84,9 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     @Override
     @CacheEvict(value = "order-cache", allEntries = true)
     @Transactional
-    public void cancelOrder(int orderId, int userId) throws ResourceNotFoundException, AuthException {
+    public void cancelOrder(int orderId, int userId) throws BadRequestDataException, AuthException {
         Optional<CoffeeOrder> response = Optional.ofNullable(coffeeOrderRepository.findById(orderId)
-                .orElseThrow(() -> new ResourceNotFoundException("orderId : " + orderId)));
+                .orElseThrow(() -> new BadRequestDataException("orderId : " + orderId)));
         validateUser(response.get(),userId);
         coffeeOrderRepository.deleteById(orderId);
         logger.info("Order successfully canceled - orderId: {}", orderId);
@@ -95,7 +95,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     }
 
 
-    public CoffeeOrder save(OrderDTO orderDTO, CustomerQueueDetail customerQueueDetail,int userId) throws ResourceNotFoundException {
+    public CoffeeOrder save(OrderDTO orderDTO, CustomerQueueDetail customerQueueDetail,int userId) throws BadRequestDataException {
         CoffeeOrder order = modelMapper.map(orderDTO, CoffeeOrder.class);
         order.setUserId(userId);
         if (customerQueueDetail != null) {
@@ -106,7 +106,7 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
         return coffeeOrderRepository.save(order);
     }
 
-    private CustomerQueueDetail calculateQueuePosition(int shopId) throws ResourceNotFoundException {
+    private CustomerQueueDetail calculateQueuePosition(int shopId) throws BadRequestDataException {
         logger.info("Starting calculating position");
         MasterQueueData masterQueue = findMasterQueueData(shopId);
         List<CustomerQueueDetail> queueList = customerQueueDetailRepository.findByShopId(shopId);
@@ -122,11 +122,11 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
         return customerQueueDetail;
     }
 
-    private MasterQueueData findMasterQueueData(int shopId) throws ResourceNotFoundException {
+    private MasterQueueData findMasterQueueData(int shopId) throws BadRequestDataException {
         MasterQueueData masterQueue = masterQueueDataRepository.findByShopId(shopId);
         if (masterQueue == null) {
             logger.error("No master queue data exist");
-            throw new ResourceNotFoundException("shopId : " + shopId);
+            throw new BadRequestDataException("shopId : " + shopId);
         }
         return masterQueue;
     }

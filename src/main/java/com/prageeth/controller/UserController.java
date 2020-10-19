@@ -5,6 +5,7 @@ import com.prageeth.dto.AuthenticateResponseDTO;
 import com.prageeth.dto.UserDTO;
 import com.prageeth.entity.UserInfo;
 import com.prageeth.exception.AuthException;
+import com.prageeth.exception.ExistingResourceException;
 import com.prageeth.service.UserInfoService;
 import com.prageeth.service.impl.JwtTokenService;
 import com.prageeth.utility.UrlNamingUtil;
@@ -27,7 +28,7 @@ public class UserController {
 
 
     @PostMapping(UrlNamingUtil.USER_MGT_URL)
-    public ResponseEntity<String> addNewUser(@RequestBody UserDTO user) {
+    public ResponseEntity<String> addNewUser(@RequestBody UserDTO user) throws ExistingResourceException {
         userInfoService.save(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

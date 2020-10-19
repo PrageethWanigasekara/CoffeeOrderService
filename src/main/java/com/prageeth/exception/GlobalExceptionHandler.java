@@ -36,8 +36,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
 
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException exception) {
+    @ExceptionHandler(BadRequestDataException.class)
+    public ResponseEntity<ErrorResponse> handleBadRequestDataException(BadRequestDataException exception) {
         ErrorResponse response = new ErrorResponse();
         response.setError(exception.getMessage());
         response.setStatus(HttpStatus.BAD_REQUEST.value());
@@ -45,31 +45,40 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(ExistingResourceException.class)
+    public ResponseEntity<ErrorResponse> handleExistingResourceException(ExistingResourceException exception) {
+        ErrorResponse response = new ErrorResponse();
+        response.setError(exception.getMessage());
+        response.setStatus(HttpStatus.BAD_REQUEST.value());
+        logger.error("Resource exist : {}", exception.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(AuthException.class)
     public ResponseEntity<ErrorResponse> handleAuthException(AuthException exception) {
         ErrorResponse response = new ErrorResponse();
         response.setError(exception.getMessage());
-        response.setStatus(HttpStatus.FORBIDDEN.value());
+        response.setStatus(HttpStatus.BAD_REQUEST.value());
         logger.error("Auth error : {}", exception.getMessage());
-        return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(JwtTokenException.class)
     public ResponseEntity<ErrorResponse> handleJwtTokenException(JwtTokenException exception) {
         ErrorResponse response = new ErrorResponse();
         response.setError(exception.getMessage());
-        response.setStatus(HttpStatus.UNAUTHORIZED.value());
+        response.setStatus(HttpStatus.FORBIDDEN.value());
         logger.error("JWT error : {}", exception.getMessage());
-        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
     }
 
     @ExceptionHandler(ExpiredJwtException.class)
     public ResponseEntity<ErrorResponse> handleExpiredJwtException(ExpiredJwtException exception) {
         ErrorResponse response = new ErrorResponse();
         response.setError("JWT token expired");
-        response.setStatus(HttpStatus.UNAUTHORIZED.value());
+        response.setStatus(HttpStatus.FORBIDDEN.value());
         logger.error("JWT error : {}", exception.getMessage());
-        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
     }
 
     @ExceptionHandler()

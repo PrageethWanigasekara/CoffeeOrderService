@@ -6,7 +6,7 @@ import com.prageeth.entity.CoffeeOrder;
 import com.prageeth.entity.CustomerQueueDetail;
 import com.prageeth.entity.MasterQueueData;
 import com.prageeth.exception.AuthException;
-import com.prageeth.exception.ResourceNotFoundException;
+import com.prageeth.exception.BadRequestDataException;
 import com.prageeth.repository.CoffeeOrderRepository;
 import com.prageeth.repository.CustomerQueueDetailRepository;
 import com.prageeth.repository.MasterQueueDataRepository;
@@ -86,7 +86,7 @@ class CoffeeOrderServiceImplTest {
         CustomerOrderDTO found = null;
         try {
             found = coffeeOrderService.getOrderById(100, 1);
-        } catch (ResourceNotFoundException exception) {
+        } catch (BadRequestDataException exception) {
             exception.printStackTrace();
         }
         assertThat(found.getOrderId()).isEqualTo(100);
@@ -99,7 +99,7 @@ class CoffeeOrderServiceImplTest {
         boolean status =false;
         try {
             found = coffeeOrderService.getOrderById(100, 10);
-        } catch (ResourceNotFoundException | AuthException exception) {
+        } catch (BadRequestDataException | AuthException exception) {
             status = true;
         }
         Assert.assertTrue(status);
@@ -113,7 +113,7 @@ class CoffeeOrderServiceImplTest {
         boolean status =false;
         try {
             coffeeOrderService.addNewOrder(orderDTO, 1);
-        } catch (ResourceNotFoundException exception) {
+        } catch (BadRequestDataException exception) {
             status = true;
         }
         Assert.assertTrue(status);
@@ -129,7 +129,7 @@ class CoffeeOrderServiceImplTest {
         boolean status =false;
         try {
             coffeeOrderService.changeOrder(10,customerOrderDTO, 1);
-        } catch (ResourceNotFoundException | AuthException exception) {
+        } catch (BadRequestDataException | AuthException exception) {
             status = true;
         }
         Assert.assertTrue(status);
@@ -141,7 +141,7 @@ class CoffeeOrderServiceImplTest {
         boolean status =false;
         try {
             coffeeOrderService.cancelOrder(10, 1);
-        } catch (ResourceNotFoundException | AuthException exception) {
+        } catch (BadRequestDataException | AuthException exception) {
             status = true;
         }
         Assert.assertTrue(status);
