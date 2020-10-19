@@ -25,6 +25,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
+    @Override
     public UserInfo save(UserDTO userDTO) throws ExistingResourceException {
         UserInfo user = userInfoRepository.findByUserName(userDTO.getUserName());
         if(user!=null){
@@ -35,6 +36,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         return userInfoRepository.save(userInfo);
     }
 
+    @Override
     public UserInfo findUser(String userName) throws BadRequestDataException {
         UserInfo user = userInfoRepository.findByUserName(userName);
         if (user == null) {
